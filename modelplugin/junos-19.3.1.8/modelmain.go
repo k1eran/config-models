@@ -66,10 +66,7 @@ func (m modelplugin) Schema() (map[string]*yang.Entry, error) {
 // GetStateMode returns an int - we do not use the enum because we do not want a
 // direct dependency on onos-config code (for build optimization)
 func (m modelplugin) GetStateMode() int {
-	// KMP copied from DeviceSim.
-	// Without the default generated value connectionMonitor.synchronize() wont invoke syncOperationalStateByPartition
-	return 1 // modelregistry.GetStateOpState
-
+	return 0 // modelregistry.GetStateNone
 }
 
 // ModelPlugin is the exported symbol that gives an entry point to this shared module
